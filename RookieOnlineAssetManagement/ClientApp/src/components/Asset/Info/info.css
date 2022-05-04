@@ -1,0 +1,81 @@
+.header {
+  background-color: #eff1f5;
+  border: 1px solid black;
+  border-radius: 10px 10px 0px 0px;
+  padding: 20px 40px;
+  font-family: Segoe UI, Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  color: #cf2338;
+}
+.body {
+  font-family: Segoe UI, Arial;
+  padding: 30px 40px 30px 40px;
+  border-radius: 0px 0px 10px 10px;
+  background-color: #fafcfc;
+  border: 1px solid black;
+}
+.btn-close {
+  color: #cf2338;
+}
+.btn-close {
+  color: #cf2338;
+}
+.headerInfo,
+.bodyInfo {
+  width: 800px;
+}
+
+@media only screen and (max-width: 600px) {
+  .headerInfo,
+  .bodyInfo {
+    width: 100%;
+  }
+  .containerModalInfo {
+    top: 0;
+    left: 0;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .headerInfo,
+  .bodyInfo {
+    width: 100%;
+  }
+  .containerModalInfo {
+    top: 0;
+    left: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .headerInfo,
+  .bodyInfo {
+    width: 100%;
+  }
+  .containerModalInfo {
+    top: 0;
+    left: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .headerInfo,
+  .bodyInfo {
+    width: 700px;
+  }
+  .containerModalInfo {
+    top: 0;
+    left: -10%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .headerInfo,
+  .bodyInfo {
+    width: 800px;
+  }
+  .containerModalInfo {
+    top: 0;
+    left: 0%;
+  }
+}

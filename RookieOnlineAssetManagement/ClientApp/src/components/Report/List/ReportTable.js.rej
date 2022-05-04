@@ -1,0 +1,97 @@
+diff a/RookieOnlineAssetManagement/ClientApp/src/components/Report/List/ReportTable.js b/RookieOnlineAssetManagement/ClientApp/src/components/Report/List/ReportTable.js	(rejected hunks)
+@@ -1,4 +1,4 @@
+-import React, { useEffect, useState } from "react";
++import React, { useEffect, useState, useRef } from "react";
+ import { Button } from "react-bootstrap";
+ import ReactPaginate from "react-paginate";
+ import DataTable from "react-data-table-component";
+@@ -8,7 +8,6 @@
+ import { getReportRequest } from "../services/request";
+ 
+ const ReportTable = () => {
+-  const [loading, setLoading] = useState(true);
+   const [totalPages, setTotalPages] = useState(0);
+   const [pageSize, setPageSize] = useState(10);
+   const [pageIndex, setPageIndex] = useState(1);
+@@ -72,13 +71,14 @@
+     { label: "Recycled", key: "recycled" },
+   ];
+ 
++  const csvInstance = useRef();
++
+   useEffect(() => {
+     GetListReport(1, null, 1, false);
+   }, []);
+ 
+   const GetListReport = async (page, column, mode, isGetAll) => {
+     try {
+-      setLoading(true);
+       var listReport = [];
+ 
+       var params = {
+@@ -93,8 +93,8 @@
+         let responseData = response.data ? response.data : "";
+         if (responseData) {
+           var totalPages = responseData.pageCount ? responseData.pageCount : 0;
+-          setTotalPages(totalPages);
+-          setPageIndex(responseData.pageIndex - 1);
++          if (!isGetAll) setTotalPages(totalPages);
++          if (!isGetAll) setPageIndex(responseData.pageIndex - 1);
+           responseData.items.forEach((element) => {
+             var reportRs = new ReportModel();
+             reportRs.assigned = element.assigned ? element.assigned : 0;
+@@ -111,8 +111,10 @@
+ 
+             listReport.push(reportRs);
+           });
+-          setReports(listReport);
+-          setLoading(false);
++          if (isGetAll) {
++            setReportData(listReport);
++            csvInstance.current.link.click();
++          } else setReports(listReport);
+         }
+       } else {
+         await Swal.fire({
+@@ -147,7 +149,6 @@
+   };
+ 
+   const handleSort = async (column, sortDirection) => {
+-    setLoading(true);
+     var columnSort = "";
+     switch (column.name) {
+       case "Category":
+@@ -188,24 +189,29 @@
+     setOrderMode(orderMode);
+   };
+ 
++  const getAllReport = async () => {
++    await GetListReport(1, orderName, orderMode, true);
++  };
++
+   return (
+     <>
+       <div className="row" style={{ padding: "15px" }}>
+         <div className="d-flex col-md-12 col-lg-12 col-xl-12 justify-content-end">
++          <Button className="btn btn-danger" onClick={getAllReport}>
++            Export
++          </Button>
+           <CSVLink
+             data={reportData}
+             headers={headers}
+             filename={"ReportOnlineAssetManagement.xlsx"}
+             target="_blank"
+-          >
+-            <Button className="btn btn-danger">Export</Button>
+-          </CSVLink>
++            ref={csvInstance}
++          ></CSVLink>
+         </div>
+       </div>
+       <DataTable
+         columns={columns}
+         data={reports}
+-        progressPending={loading}
+         sortServer
+         responsive={true}
+         fixedHeader={true}

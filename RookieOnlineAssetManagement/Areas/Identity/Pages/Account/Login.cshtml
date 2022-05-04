@@ -1,0 +1,126 @@
+@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<h1>@ViewData["Title"]</h1>
+
+<div class="row mt-5">
+</div>
+<div class="row mt-5">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6 justify-content-center align-self-center mt-5">
+        <section>
+            <div class="text-center borders p-3 border-bottom-0 head">
+               <h5 class="text-danger font-weight-bold">Welcome to Online Asset Management</h5> 
+            </div>
+
+            <div class="borders d-flex justify-content-center p-4 body">
+             <form id="account" method="post">    
+                  <div class="form-group row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                 <div class="text-danger validation-all" style="text-decoration:none; " asp-validation-summary="All"></div>
+                    </div>
+                    <div class="col-1"></div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-1"></div>
+                    <div class="col-3">
+                       <label asp-for="Input.UserName">Username<span class="text-danger">*</span></label>
+                    </div>
+                    <div class="col-7">
+                       <input asp-for="Input.UserName" class="form-control input reqrd"  maxlength="50" />
+                       <span asp-validation-for="Input.UserName" class="text-danger"></span>
+                    </div>
+                    <div class="col-1"></div>
+
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-1"></div>
+                    <div class="col-3">
+                        <label asp-for="Input.Password">Password<span class="text-danger">*</span></label>
+                    </div>
+                    <div class="col-7 input-group" >
+                        <input asp-for="Input.Password" class="form-control input reqrd" type="password" maxlength="50" minlength="8" />  
+                       @* <span asp-validation-for="Input.Password" class="text-danger"></span>    *@                      
+                    
+                    </div>    
+                    
+
+                    <div class="col-1"></div>
+                </div>
+                 <div class="form-group row">
+                    <div class="col-1"></div>                  
+                    <div class="col-10 d-flex justify-content-end mt-1">
+                        <button type="submit" class="btn btn-danger inline button" id="next_btn1" >Login</button>
+                    </div>
+                    <div class="col-1"></div>   
+                </div>
+                   
+            </form>
+            </div>
+
+        </section>
+    </div>
+</div>
+
+<style>
+    .borders{
+        border: 2px solid gray;
+        border-radius: 10px;
+    }
+    .head{
+        background-color:rgba(239,241,245,1);
+    }
+    .body{
+        background-color:rgba(250,252,252,1);
+    }
+    .validation-all ul{
+        margin:0;
+        padding: 0;
+        margin-top:2px;
+    }
+    .validation-all ul li{
+        list-style-type: none;
+    }
+
+</style>
+
+<script>
+    var a = document.getElementsByClassName('.reqrd');
+    if (a.value == '') {
+        document.getElementById("next_btn1").disabled = true;
+    }
+    (function () {
+        $('#next_btn1').prop('disabled', true);
+        $('.reqrd').keyup(function () {
+                var isEmpty = false;
+                $('.reqrd').each(function() {
+                    if ($(this).val() == '') {
+                        isEmpty = true;
+                    }
+                });
+
+                if (isEmpty) {
+                    $('#next_btn1').prop('disabled', true);
+                } else if ($(this).val().length >= 8) {
+                    $('#next_btn1').removeAttr('disabled');
+                }
+                else {
+                    $('#next_btn1').prop('disabled', true);
+                }
+            });
+        })()
+</script>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

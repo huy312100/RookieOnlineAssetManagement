@@ -1,0 +1,19 @@
+
+/* custom style for paging table */
+.page-item .page-link {
+    z-index: 3;
+    color: #CF2338;;
+    background-color: rgb(255, 255, 255) !important;
+    box-shadow: none;
+    border: 1px solid lightgray;
+  }
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff !important;
+    background-color: #CF2338 !important;
+    box-shadow: none;
+    border: 1px solid lightgray;
+  }
+.pagination{
+    float:right;
+}

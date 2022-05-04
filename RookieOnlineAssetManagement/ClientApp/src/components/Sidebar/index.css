@@ -1,0 +1,80 @@
+
+#Online_Asset_Management_mjc {
+    text-align: left;
+    font-family: Segoe UI, Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgba(207,35,56,1);
+}
+
+#Logo_mjd {
+    width: 92px;
+    height: 93px;
+}
+
+#sizeBar {
+    margin-top: 40px;
+    width: 100%;
+    height: auto;
+}
+
+.SidebarList {
+    width: 100%;
+    padding: 0;
+    height: 100%;
+}
+
+    .SidebarList .row {
+        margin-top: 3px;
+        width: 100%;
+        height: 60px;
+        background-color: #EFF1F5;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        transition: 0.2s ease-in-out;
+    }
+
+        .SidebarList .row:hover {
+            cursor: pointer;
+            color: white;
+            background-color: #CF2338;
+        }
+
+        .SidebarList .row .link:hover {
+            color: white;
+        }
+
+.title {
+    font-family: Segoe UI, Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 25px;
+}
+
+.link {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.active {
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: #CF2338;
+    font-family: Segoe UI, Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

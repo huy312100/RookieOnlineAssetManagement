@@ -1,0 +1,45 @@
+
+.modal-content{
+    width: 100%;
+    border: 0px;
+    border-radius: 10px; 
+    position: absolute;
+}
+.containerModal{
+    top: 30%;
+    left: 10%;
+}
+.containerModalErr{
+    top: 15%;
+    left: 10%;
+}
+.containerModalInfor{
+    top:20%;
+    left: 3%;
+}
+.header{ background-color: #EFF1F5;
+    border: 1px solid black;
+    border-radius: 10px 10px 0px 0px;
+    padding: 20px 40px;
+    font-family: Segoe UI, Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    color: #CF2338;
+
+}
+.body{
+    font-family: Segoe UI, Arial;
+    padding: 30px 40px 30px 40px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #FAFCFC;
+    border: 1px solid black;
+}
+.head-popup{
+    width: 600px;
+}
+.date-input::-webkit-inner-spin-button,
+.date-input::-webkit-calendar-picker-indicator{
+    display: none;
+    -webkit-appearance: none;
+}
