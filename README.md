@@ -11,7 +11,7 @@ We would like to establishment a project call ‘Online Asset Management’ whic
 
 ## 2. Usecase Model
 
-![use-case-model.png](/.attachments/use-case-model-08226683-6b22-45e0-99bf-e9898daaab1c.png)
+![use-case-model.png](/img/use-case-model-08226683-6b22-45e0-99bf-e9898daaab1c.png)
 
 ### 2.1 **Administrator** is responsible for registering with the tool and creating a profile. 
 - **Create User:** Admin logs into the OPM and create a user profile.
@@ -31,7 +31,7 @@ We would like to establishment a project call ‘Online Asset Management’ whic
 ## 3. Architecture Goals
 ### 3.1 High level architecture
 
-![Client Feedback SAD.jpg](/.attachments/Client%20Feedback%20SAD-663fb990-52f3-45b2-a04b-281a73f82c4d.jpg)
+![Client Feedback SAD.jpg](/img/Client%20Feedback%20SAD-663fb990-52f3-45b2-a04b-281a73f82c4d.jpg)
 
 **Summary**
 - **Azure App Service**: used to host React Frontend and ASP.Net Core API backend.
@@ -57,7 +57,7 @@ We would like to establishment a project call ‘Online Asset Management’ whic
 
 ## 5. CI/CD
 
-![architecture-devops-dotnet-webapp.svg](/.attachments/architecture-devops-dotnet-webapp-4fbba711-8e89-4faf-a6f2-4383bfab237e.svg)
+![architecture-devops-dotnet-webapp.svg](/img/architecture-devops-dotnet-webapp-4fbba711-8e89-4faf-a6f2-4383bfab237e.svg)
 
 The data flows through the scenario as follows:
 
