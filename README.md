@@ -31,7 +31,7 @@ We would like to establishment a project call ‘Online Asset Management’ whic
 ## 3. Architecture Goals
 ### 3.1 High level architecture
 
-![Client Feedback SAD.jpg](/img/Client%20Feedback%20SAD-663fb990-52f3-45b2-a04b-281a73f82c4d.jpg)
+![Client Feedback SAD.jpg](/img/Client-Feedback-SAD-663fb990-52f3-45b2-a04b-281a73f82c4d.png)
 
 **Summary**
 - **Azure App Service**: used to host React Frontend and ASP.Net Core API backend.
